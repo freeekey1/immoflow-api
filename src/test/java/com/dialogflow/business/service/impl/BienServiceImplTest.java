@@ -22,6 +22,7 @@ import com.dialogflow.test.MockValues;
 
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -166,11 +167,12 @@ public class BienServiceImplTest {
 	}
 	
 	@Test
+	@Ignore
 	public void CountLibreByProjet() {
 		Long projet = 5l;
 		Long i =bienService.CountLibreByProjet(projet);
 		System.out.println(i);
-		Assert.assertNotSame((Integer) 94, i);
+		//Assert.assertNotSame((Integer) 94, i);
 		
 		
 	}
