@@ -13,8 +13,10 @@
     		<groupId>com.oracle</groupId>
     		<artifactId>ojdbc14</artifactId>
     		<version>14</version>
-	    	<scope>compile</scope>
+	    	<scope>system</scope>
+			<systemPath>${project.basedir}/TelosysTools/lib/ojdbc14.jar</systemPath>
 		</dependency>		
+
 
 		<!-- Insert contents of : pom_dependencies_common.txt -->
 		<dependency>
