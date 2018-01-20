@@ -9,14 +9,12 @@
 	<dependencies>
 
 		<!-- Add the JDBC driver here -->
-		<dependency>
+ 		<dependency>
     		<groupId>com.oracle</groupId>
     		<artifactId>ojdbc14</artifactId>
     		<version>14</version>
-	    	<scope>system</scope>
-			<systemPath>${project.basedir}/TelosysTools/lib/ojdbc14.jar</systemPath>
-		</dependency>		
-
+	    	<scope>compile</scope>
+		</dependency>	 	
 
 		<!-- Insert contents of : pom_dependencies_common.txt -->
 		<dependency>
