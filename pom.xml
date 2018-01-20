@@ -13,7 +13,6 @@
     		<groupId>com.oracle</groupId>
     		<artifactId>ojdbc14</artifactId>
     		<version>14</version>
-	    	<scope>compile</scope>
 		</dependency>	 	
 
 		<!-- Insert contents of : pom_dependencies_common.txt -->
