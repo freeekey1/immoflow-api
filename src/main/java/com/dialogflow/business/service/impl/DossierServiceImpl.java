@@ -4,6 +4,7 @@
  */
 package com.dialogflow.business.service.impl;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import com.dialogflow.bean.jpa.DossierEntity;
 import com.dialogflow.business.service.DossierService;
 import com.dialogflow.business.service.mapping.DossierServiceMapper;
 import com.dialogflow.data.repository.jpa.DossierJpaRepository;
+import com.dialogflow.object.VenteObject;
+
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -90,6 +93,18 @@ public class DossierServiceImpl implements DossierService {
 
 	public void setDossierServiceMapper(DossierServiceMapper dossierServiceMapper) {
 		this.dossierServiceMapper = dossierServiceMapper;
+	}
+
+	@Override
+	public VenteObject ventesParProjet(Long projet) {
+		VenteObject vo = new VenteObject();
+		Object[] bean =  dossierJpaRepository.ventesParProjet(projet);
+		if(bean != null) {
+			vo.setNombreVente(((BigDecimal)bean[0]).longValue());
+			vo.setId(((BigDecimal)bean[2]).longValue());
+			vo.setChiffreAffaire(((BigDecimal)bean[3]).longValue());
+		}
+		return vo;
 	}
 
 }

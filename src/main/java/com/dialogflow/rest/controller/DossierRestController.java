@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import com.dialogflow.bean.Dossier;
 import com.dialogflow.business.service.DossierService;
+import com.dialogflow.object.VenteObject;
 import com.dialogflow.web.listitem.DossierListItem;
 
 /**
@@ -88,6 +89,15 @@ public class DossierRestController {
 	@ResponseBody
 	public void delete(@PathVariable("id") Integer id) {
 		dossierService.delete(id);
+	}
+	
+	@RequestMapping( value="/vente/{id}",
+			method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public VenteObject nombreVentes(@PathVariable("id") Long id) {
+		return dossierService.ventesParProjet(id);
 	}
 	
 }

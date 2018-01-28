@@ -18,9 +18,12 @@ import java.util.Date;
 import java.util.List;
 import com.dialogflow.business.service.mapping.DossierServiceMapper;
 import com.dialogflow.data.repository.jpa.DossierJpaRepository;
+import com.dialogflow.object.VenteObject;
 import com.dialogflow.test.DossierFactoryForTest;
 import com.dialogflow.test.DossierEntityFactoryForTest;
 import com.dialogflow.test.MockValues;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -163,5 +166,15 @@ public class DossierServiceImplTest {
 		verify(dossierJpaRepository).delete(id);
 		
 	}
+	
+	@Test
+	@Ignore
+	public void ventesParProjet() {
+		Long projet = 2l;
+		VenteObject i =dossierService.ventesParProjet(projet);
+		System.out.println(i);		
+		
+	}
+
 
 }

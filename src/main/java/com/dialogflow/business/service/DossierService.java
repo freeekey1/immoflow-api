@@ -7,6 +7,7 @@ package com.dialogflow.business.service;
 import java.util.List;
 
 import com.dialogflow.bean.Dossier;
+import com.dialogflow.object.VenteObject;
 
 /**
  * Business Service Interface for entity Dossier.
@@ -54,4 +55,5 @@ public interface DossierService {
 	void delete( Integer id );
 
 
+	VenteObject ventesParProjet(Long projet);
 }
